@@ -18,8 +18,7 @@ BEGIN
       JOIN responsabile r ON r.id_responsabile = a.id_responsabile
      WHERE a.id_asset = NEW.id_asset;
 
-    -- Se servizio o asset non esistono lascio il compito alle FK
-    -- (che segnaleranno l'errore corretto).
+
     IF v_azienda_servizio IS NULL OR v_azienda_asset IS NULL THEN
         RETURN NEW;
     END IF;
