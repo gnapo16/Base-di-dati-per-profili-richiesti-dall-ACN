@@ -113,7 +113,7 @@ CREATE TABLE versione (
     CONSTRAINT ck_versione_stato  CHECK (stato_versione IN ('bozza', 'approvata', 'archiviata'))
 );
 
--- Una sola versione approvata per azienda
+
 CREATE UNIQUE INDEX uq_versione_approvata_per_azienda
     ON versione (id_azienda)
     WHERE stato_versione = 'approvata';
